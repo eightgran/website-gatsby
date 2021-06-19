@@ -1,18 +1,14 @@
-import React from 'react'
+import React from "react"
 import styled from "styled-components"
 
 const Home = () => {
-    return (
-       <Container >
-
-       </Container>
-    )
+  return <Container></Container>
 }
 
 export default Home
 
 const Container = styled.div`
-  background: #fefefe;
+  background: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -31,11 +27,6 @@ const Container = styled.div`
     right: 0;
     left: 0;
     z-index: 2;
-    background: linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 0.2) 0%,
-        rgba(0, 0, 0, 0.6) 100%
-      ),
-      linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, transparent 100%);
+    background: linear-gradient(90deg, #ffffff, #eeeeee);
   }
 `
