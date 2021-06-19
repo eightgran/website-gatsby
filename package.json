@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "eightgran <eightgran@gmail.com>",
   "dependencies": {
+    "@fontsource/montserrat": "^4.4.5",
     "gatsby": "^3.6.2",
     "gatsby-image": "^3.7.1",
     "gatsby-plugin-gatsby-cloud": "^2.6.1",
