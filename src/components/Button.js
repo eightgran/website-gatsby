@@ -5,7 +5,7 @@ export const Button = styled(Link)`
   background: ${({ black }) => (black ? "#000000" : "#545454")};
   white-space: nowrap;
   padding: ${({ big }) => (big ? "16px 40px" : "10px 32px")};
-  color: #fff;
+  color: ${({ black }) => (black ? "#c1c1c1" : "#fff")};
   font-size: ${({ big }) => (big ? "14px" : "12px")};
   font-weight: 700;
   letter-spacing: 0.05rem;
@@ -15,6 +15,9 @@ export const Button = styled(Link)`
   cursor: pointer;
   text-decoration: none;
   transition: 0.3s !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: ${({ round }) => (round ? "50px" : "none")};
 
   &:hover {

@@ -2,7 +2,8 @@ import * as React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import { NavigationData } from "../data/NavigationData"
-import { FaBars } from "react-icons/fa"
+import { MdMenu } from "react-icons/md"
+import {GoMarkGithub} from "react-icons/go"
 import { useLocation } from "@reach/router"
 import { useState } from "react"
 import { Button } from "./Button"
@@ -44,7 +45,7 @@ const Header = () => {
         })}
         <HeaderButton>
           <Button black="true" round="true" to="/projects">
-            GITHUB
+            <GitHubLogo/> GITHUB
           </Button>
         </HeaderButton>
       </NavMenu>
@@ -69,13 +70,14 @@ const NavMenu = styled.div`
   display: flex;
   align-items: center;
   /* margin-right: -48px; */
+  font-size: 0.9rem;
 
   @media screen and (max-width: 768px) {
     display: none;
   }
 `
 
-const Bars = styled(FaBars)`
+const Bars = styled(MdMenu)`
   display: none;
   color: #fff;
 
@@ -88,6 +90,12 @@ const Bars = styled(FaBars)`
     font-size: 1.8rem;
     cursor: pointer;
   }
+`
+
+const GitHubLogo = styled(GoMarkGithub)`
+  margin-right: 0.5rem;
+  font-size: 1rem;
+  text-align: left;
 `
 
 const HeaderLink = styled(Link)`
@@ -103,10 +111,9 @@ const HeaderLink = styled(Link)`
   transition: 0.3s !important;
 
   &:hover {
-    color: ${({ active }) =>{
-      if (!active)
-      {
-        return  (active ? "#797979" : "#dddddd")
+    color: ${({ active }) => {
+      if (!active) {
+        return active ? "#797979" : "#dddddd"
       } else {
         return "#dddddd"
       }
