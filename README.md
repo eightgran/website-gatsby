@@ -9,13 +9,22 @@
 
 This is my personal website built with Gatsby and React.
 
-## 🚀 Quick start
+## Dependencies
+
+This website utilizes:
+* [ReactJS](https://github.com/facebook/react/) as Javascript Framework.
+* [Gatsby](https://github.com/gatsbyjs/gatsby) as Static Site Generator.
+* [styled-components](https://github.com/styled-components/styled-components) for low-level styling of React components.
+
+and Gatsby
+
+## Quick start - Gatsby
 
 1.  **Check out project**
 
     Use the git CLI to clone this project.
 
-    ```shell
+    ```bash
     git clone https://github.com/eightgran/website-gatsby.git
     ```
 
@@ -23,7 +32,7 @@ This is my personal website built with Gatsby and React.
 
     Navigate into your new site’s directory and start it up.
 
-    ```shell
+    ```bash
     cd website-gatsby/
     gatsby develop
     ```
@@ -36,7 +45,7 @@ This is my personal website built with Gatsby and React.
 
     Open the `my-default-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
 
-## 🎓 Learning Gatsby
+## Learning Gatsby
 
 Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.com/). Here are some places to start:
 
