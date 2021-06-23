@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import { ProfileData } from "../data/ProfileData"
+import SocialMediaIcons from "./SocialMediaIcons"
 
 const About = () => {
   return (
@@ -20,20 +21,7 @@ const About = () => {
               )
             })}
           </ProfileCharacteristics>
-          <SocialMediaIconContainer>
-            {ProfileData.socialMediaProfiles.map((social, key) => {
-              return (
-                <SocialMediaIcon
-                  key={key}
-                  to={social.link}
-                  target="_blank"
-                  margin={key < ProfileData.socialMediaProfiles.length - 1}
-                >
-                  {<social.icon />}
-                </SocialMediaIcon>
-              )
-            })}
-          </SocialMediaIconContainer>
+          <SocialMediaIcons />
         </ProfileDescription>
       </AboutContent>
     </AboutSection>
@@ -55,7 +43,6 @@ const AboutSection = styled.div`
 `
 const AboutContent = styled.div`
   display: flex;
-  flex-direction: column;
   flex-direction: row;
 
   align-items: center;

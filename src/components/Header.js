@@ -49,7 +49,8 @@ const Header = () => {
             to={NavigationData.headerButtonLink.link}
             target="_blank"
           >
-            <NavigationData.headerButtonLink.icon /> {NavigationData.headerButtonLink.label}
+            <ButtonIcon/>
+            {NavigationData.headerButtonLink.label}
           </Button>
         </HeaderButton>
       </NavMenu>
@@ -96,7 +97,7 @@ const Bars = styled(MdMenu)`
   }
 `
 
-const GitHubLogo = styled.div`
+const ButtonIcon = styled(NavigationData.headerButtonLink.icon)`
   margin-right: 0.5rem;
   font-size: 1rem;
   text-align: left;
