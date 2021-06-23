@@ -3,7 +3,6 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 import { NavigationData } from "../data/NavigationData"
 import { MdMenu } from "react-icons/md"
-import {GoMarkGithub} from "react-icons/go"
 import { useLocation } from "@reach/router"
 import { useState } from "react"
 import { Button } from "./Button"
@@ -23,7 +22,7 @@ const Header = () => {
       </HeaderLink>
       <Bars />
       <NavMenu>
-        {NavigationData.map((item, index) => {
+        {NavigationData.headerLinks.map((item, index) => {
           if (item.showOnHeader) {
             return (
               <HeaderLink
@@ -44,8 +43,13 @@ const Header = () => {
           }
         })}
         <HeaderButton>
-          <Button black="true" round="true" to="/projects">
-            <GitHubLogo/> GITHUB
+          <Button
+            black="true"
+            round="true"
+            to={NavigationData.headerButtonLink.link}
+            target="_blank"
+          >
+            <NavigationData.headerButtonLink.icon /> {NavigationData.headerButtonLink.label}
           </Button>
         </HeaderButton>
       </NavMenu>
@@ -92,7 +96,7 @@ const Bars = styled(MdMenu)`
   }
 `
 
-const GitHubLogo = styled(GoMarkGithub)`
+const GitHubLogo = styled.div`
   margin-right: 0.5rem;
   font-size: 1rem;
   text-align: left;
