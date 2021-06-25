@@ -15,4 +15,16 @@ export const NavigationData = {
     label: "GITHUB",
     icon: FaGithub,
   },
+  footerLinks: [
+    {
+      title: "Home",
+      link: "/",
+      showOnFooter: true,
+    },
+    {
+      title: "Privacy Policy",
+      link: "/privacy",
+      showOnFooter: true,
+    },
+  ],
 }

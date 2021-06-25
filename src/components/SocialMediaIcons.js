@@ -6,13 +6,16 @@ import { ProfileData } from "../data/ProfileData"
 const SocialMediaIcons = () => {
   return (
     <SocialMediaIconContainer>
+      <EmailIcon href={`mailto:${ProfileData.email}`}>
+        {<ProfileData.emailIcon/>}
+      </EmailIcon>
       {ProfileData.socialMediaProfiles.map((social, key) => {
         return (
           <SocialMediaIcon
             key={key}
             to={social.link}
             target="_blank"
-            margin={key < ProfileData.socialMediaProfiles.length - 1}
+            margin={+(key < ProfileData.socialMediaProfiles.length - 1)}
           >
             {<social.icon />}
           </SocialMediaIcon>
@@ -37,7 +40,25 @@ const SocialMediaIcon = styled(Link)`
   font-size: 1.5rem;
   transition: 150ms;
   text-decoration: none !important;
-  display: flex;  
+  display: flex;
+
+  &:hover {
+    color: #fff;
+    cursor: pointer;
+  }
+
+  @media screen and (max-width: 768px) {
+    font-size: 2rem;
+  }
+`
+
+const EmailIcon = styled.a`
+  margin-right: 0.5rem;
+  color: #bdbdbd;
+  font-size: 1.5rem;
+  transition: 150ms;
+  text-decoration: none !important;
+  display: flex;
 
   &:hover {
     color: #fff;
