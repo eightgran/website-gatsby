@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import Logo from "../assets/images/Icon-256.svg"
+import { ProfileData } from '../data/ProfileData'
 
 const LogoSmall = () => {
     return (
@@ -10,7 +10,7 @@ const LogoSmall = () => {
 
 export default LogoSmall
 
-const StyledLogo = styled(Logo)`
+const StyledLogo = styled(ProfileData.logoSvgSmall)`
  width: 3rem;
  height: 3rem;
 

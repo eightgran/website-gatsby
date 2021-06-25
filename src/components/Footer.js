@@ -12,7 +12,7 @@ const Footer = () => {
         <BrandDescription>
           <LogoSmall />
           <h6>eightgran</h6>
-          <p>is making software</p>
+          <p>{ProfileData.slogan}</p>
         </BrandDescription>
         <FooterLinks>
           <SourceLink to="/about">{"<view source>"}</SourceLink>
