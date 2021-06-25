@@ -1,14 +1,42 @@
 import React from "react"
-import { Link } from "gatsby"
+import { useStaticQuery,graphql } from "gatsby"
+import Img from "gatsby-image"
 import styled from "styled-components"
 import { ProfileData } from "../data/ProfileData"
 import SocialMediaIcons from "./SocialMediaIcons"
 
 const About = () => {
+  const data = useStaticQuery(graphql`
+    query ProfilePictureQuery {
+      allFile(
+        filter: {
+          ext: { regex: "/(jpg)|(png)|(jpeg)/" }
+          name: { in: ["Profile_Picture"] }
+        }
+      ) {
+        edges {
+          node {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
+
   return (
     <AboutSection>
       <AboutContent>
-        <ProfilePicture />
+        {data.allFile.edges.map((image, key) => (
+          <Images
+            key={key}
+            alt={image.node.alt}
+            fluid={image.node.childImageSharp.fluid}
+          />
+        ))}
         <ProfileDescription>
           <h1>{ProfileData.name}</h1>
           <ProfileCharacteristics>
@@ -29,6 +57,17 @@ const About = () => {
 }
 
 export default About
+
+const Images = styled(Img)`
+  border-radius: 25%;
+  box-shadow: -2px 2px 8px -1px rgba(0,0,0,0.25);
+  height: 192px;
+  width: 192px;
+  @media screen and (max-width: 768px) {
+    height: 256px;
+  width: 256px;
+  }
+`
 
 const AboutSection = styled.div`
   background: #4a4a4a;
@@ -86,10 +125,8 @@ const ProfileCharacteristics = styled.div`
     font-size: 1.15rem;
     @media screen and (max-width: 768px) {
       font-size: 1rem;
+    }
   }
-  }
-
-
 `
 
 const ProfileProperty = styled.div`
