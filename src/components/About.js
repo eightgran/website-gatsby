@@ -16,7 +16,7 @@ const About = () => {
               return (
                 <ProfileProperty key={key}>
                   <IconContainer>{<elem.icon />}</IconContainer>
-                  {elem.label}
+                  <p>{elem.label}</p>
                 </ProfileProperty>
               )
             })}
@@ -56,7 +56,7 @@ const AboutContent = styled.div`
     /* margin: 1rem; */
 
     @media screen and (max-width: 768px) {
-      font-size: 1.5rem;
+      font-size: 1.25rem;
     }
   }
   @media screen and (max-width: 768px) {
@@ -81,6 +81,15 @@ const ProfilePicture = styled.div`
 const ProfileCharacteristics = styled.div`
   margin-top: 1rem;
   margin-bottom: 1rem;
+
+  p {
+    font-size: 1.15rem;
+    @media screen and (max-width: 768px) {
+      font-size: 1rem;
+  }
+  }
+
+
 `
 
 const ProfileProperty = styled.div`
@@ -102,22 +111,4 @@ const SocialMediaIconContainer = styled.div`
 
 const ProfileDescription = styled.div`
   margin: 2rem;
-`
-
-const SocialMediaIcon = styled(Link)`
-  margin-right: ${({ margin }) => (margin ? "0.5rem" : "0")};
-
-  color: #bdbdbd;
-  font-size: 1.25rem;
-  transition: 150ms;
-  text-decoration: none !important;
-
-  &:hover {
-    color: #fff;
-    cursor: pointer;
-  }
-
-  @media screen and (max-width: 768px) {
-    font-size: 2rem;
-  }
 `

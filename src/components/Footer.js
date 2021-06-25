@@ -1,155 +1,139 @@
-import { Link } from "gatsby"
 import React from "react"
 import styled from "styled-components"
-import SocialMediaIcons from "./SocialMediaIcons"
+import { Link } from "gatsby"
+import { ProfileData } from "../data/ProfileData"
+import { NavigationData } from "../data/NavigationData"
+import LogoSmall from "./LogoSmall"
 
 const Footer = () => {
   return (
-    //     <FooterContainer>
-
-    // <Description>
-    //           <p>eightgran</p>
-    //           <p>Michael Grigorenko</p>
-    //         </Description>
-
-    //         <FooterLinks>
-    //           <SourceCodeLink>
-    //             <p>source code</p>
-    //           </SourceCodeLink>
-    //           <SocialMediaIcons />
-    //         </FooterLinks>
-
-    //         <FooterLinks>
-    //           <SourceCodeLink>
-    //             <p>source code</p>
-    //           </SourceCodeLink>
-    //         </FooterLinks>
-
-    //     </FooterContainer>
-    <FooterContainer>
-      <FooterContent>
-        <Description>
-          <p>eightgran</p>
-          <p>Michael Grigorenko</p>
-        </Description>
+    <Container>
+      <FooterLinksContainer>
+        <BrandDescription>
+          <LogoSmall />
+          <h6>eightgran</h6>
+          <p>is making software</p>
+        </BrandDescription>
         <FooterLinks>
-          <SourceCodeLink>
-            <p>source code</p>
-          </SourceCodeLink>
+          <SourceLink to="/about">{"<view source>"}</SourceLink>
         </FooterLinks>
-        <SocialMediaIcons />
+      </FooterLinksContainer>
+      <FooterLinksContainer>
         <FooterLinks>
-          <SourceCodeLink>
-            <p>source code</p>
-          </SourceCodeLink>
+          <FooterLinkTitle>Social Media</FooterLinkTitle>
+
+          {ProfileData.socialMediaProfiles.map((social, key) => {
+            return (
+              <FooterLink
+                key={key}
+                to={social.link}
+                target="_blank"
+                icon="true"
+              >
+                {<social.icon />}
+              </FooterLink>
+            )
+          })}
         </FooterLinks>
-      </FooterContent>
-    </FooterContainer>
+        <FooterLinks>
+          <FooterLinkTitle>Content</FooterLinkTitle>
+
+          {NavigationData.footerLinks.map((link, key) => {
+            return (
+              <FooterLink key={key} to={link.link} target="_blank">
+                {link.title}
+              </FooterLink>
+            )
+          })}
+        </FooterLinks>
+      </FooterLinksContainer>
+    </Container>
   )
 }
 
 export default Footer
 
-const FooterContent = styled.div`
+const Container = styled.div`
+  padding: 4rem calc((100vw - 1100px) / 2);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  color: #5c5963;
+  background: #fff;
+`
+const BrandDescription = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1rem 2rem;
 
-  align-items: center;
-  text-align: left;
+  @media screen and (max-width: 768px) {
+    padding: 1rem;
+    font-size: 0.85rem;
+  }
 
-  padding: 2rem 1rem;
-  justify-content: space-between;
-  width: 100%;
-
-  h1 {
-    color: #dbdbdb;
-    font-size: 2rem;
-    /* margin: 1rem; */
-
+  h6 {
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+    font-weight: 600;
+    font-size: 1rem;
     @media screen and (max-width: 768px) {
-      font-size: 1.5rem;
+      font-size: 0.85rem;
     }
   }
-  @media screen and (max-width: 768px) {
-    flex-direction: column;
-    justify-content: center;
-  }
-`
 
-const FooterContainer = styled.div`
-  padding: 2 calc((100vw - 1100px) / 2);
-  background: #303030;
-  display: flex;
-  flex-direction: row;
-  position: relative;
-  justify-content: center;
-`
-
-// const FooterContainer = styled.div`
-//   padding: 2rem calc((100vw - 1100px) / 2);
-//   width: 100%;
-//   display: flex;
-//   /* flex-direction: row; */
-//   position: relative;
-//   background: #303030;
-//   /* justify-content: space-between; */
-//   @media screen and (max-width: 768px) {
-//     display: column;
-//     justify-content: center;
-//   }
-// `
-// const ContentContainer = styled.div`
-//   margin: 1rem;
-//   width: 100%;
-//   display: flex;
-//   /* flex-direction: row; */
-//   justify-content: space-between;
-
-//   @media screen and (max-width: 768px) {
-//     display: column;
-//     justify-content: center;
-//   }
-// `
-const Description = styled.div`
-  margin-left: 2rem;
-  margin-right: 2rem;
-  text-align: left;
   p {
-    font-size: 0.85rem;
-    color: #fff;
-
-    font-weight: 500;
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+    font-weight: 400;
+    font-size: 1rem;
+    @media screen and (max-width: 768px) {
+      font-size: 0.85rem;
+    }
   }
+`
+const FooterLinksContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 
   @media screen and (max-width: 768px) {
-    text-align: center;
+    grid-template-columns: 1fr;
   }
-
 `
 const FooterLinks = styled.div`
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  /* margin-top: 1rem; */
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1rem 2rem;
 
   @media screen and (max-width: 768px) {
-    display: column;
-    justify-content: center;
-
-
-    margin: 2rem;
+    padding: 1rem;
+  }
+`
+const FooterLinkTitle = styled.h2`
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+`
+const FooterLink = styled(Link)`
+  align-items: center;
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+  font-size: ${({ icon }) => (icon ? "1.5rem" : "0.85rem")};
+  text-align: left;
+  color: #ababab;
+  font-weight: 500;
+  &:hover {
+    transition: 400ms ease-out;
+    color: #5c5963;
   }
 `
 
-const SourceCodeLink = styled(Link)`
+const SourceLink = styled(Link)`
   text-decoration: none;
-  color: #fff;
-  display: flex;
-  margin-left: 2rem;
-  margin-right: 2rem;
-  @media screen and (max-width: 768px) {
-    display: column;
-    justify-content: center;
-   
+  margin-bottom: 0.5rem;
+  color: #ababab;
+  font-family: monospace;
+  &:hover {
+    transition: 400ms ease-out;
+    color: #5c5963;
   }
 `

@@ -44,7 +44,6 @@ const Header = () => {
         })}
         <HeaderButton>
           <Button
-            black="true"
             round="true"
             to={NavigationData.headerButtonLink.link}
             target="_blank"
@@ -61,14 +60,14 @@ const Header = () => {
 export default Header
 
 const Container = styled.nav`
-  background: #303030;
+  background: #fff;
   height: 80px;
   display: flex;
   justify-content: space-between;
   padding: 0.5rem calc((100vw - 1300px) / 2);
   z-index: 100;
   position: relative;
-  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 2px 8px -1px rgba(0, 0, 0, 0.125);
 `
 
 const NavMenu = styled.div`
@@ -84,7 +83,7 @@ const NavMenu = styled.div`
 
 const Bars = styled(MdMenu)`
   display: none;
-  color: #fff;
+  color: #ababab;
 
   @media screen and (max-width: 768px) {
     display: block;
@@ -104,23 +103,23 @@ const ButtonIcon = styled(NavigationData.headerButtonLink.icon)`
 `
 
 const HeaderLink = styled(Link)`
-  color: ${({ active }) => (active ? "#dddddd" : "#797979")};
+  color: ${({ active }) => (active ? "#5C5963" : "#ababab")};
   display: flex;
   align-items: center;
   text-decoration: none;
   padding: 0 1rem;
   height: 100%;
   cursor: pointer;
-  font-weight: ${props => (props.active ? 800 : 600)};
+  font-weight: 700;
   letter-spacing: ${props => (props.letterSpacing ? "0.06rem" : "0.04rem")};
   transition: 0.3s !important;
 
   &:hover {
     color: ${({ active }) => {
       if (!active) {
-        return active ? "#797979" : "#dddddd"
+        return active ? "#ababab" : "#5C5963"
       } else {
-        return "#dddddd"
+        return "#5C5963"
       }
     }};
   }
