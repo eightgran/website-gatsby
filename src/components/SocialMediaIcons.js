@@ -12,7 +12,7 @@ const SocialMediaIcons = () => {
         return (
           <SocialMediaIcon
             key={key}
-            to={social.link}
+            href={social.link}
             target="_blank"
             margin={+(key < ProfileData.socialMediaProfiles.length - 1)}
           >
