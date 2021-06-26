@@ -25,9 +25,10 @@ const Header = () => {
       <HeaderLink letterSpacing="true" active="true" to="/">
         <LogoSmall />
       </HeaderLink>
-      <MobileDrawer 
-      hidden={!showMobileDrawer}
-      showmobiledrawer={+showMobileDrawer}>
+      <MobileDrawer
+        hidden={!showMobileDrawer}
+        showmobiledrawer={+showMobileDrawer}
+      >
         {NavigationData.headerLinks.map((item, index) => {
           if (item.showOnHeader) {
             return (
@@ -35,10 +36,9 @@ const Header = () => {
                 to={item.link}
                 key={index}
                 active={+getIsActiveRoute(item)}
-                onClick={()=>setShowMobileDrawer(false)}
+                onClick={() => setShowMobileDrawer(false)}
               >
                 {item.title}
-                
               </DrawerLink>
             )
           }
@@ -103,7 +103,7 @@ const NavMenu = styled.div`
   align-items: center;
   /* margin-right: -48px; */
   font-size: 0.9rem;
-  
+
   @media screen and (max-width: 768px) {
     display: none;
   }
@@ -126,7 +126,7 @@ const drawerAnimation = keyframes`
 const MobileDrawer = styled.div`
   display: none;
   flex-direction: column;
-  background: rgba(0,0,0,0.3);
+  background: rgba(0, 0, 0, 0.3);
   animation: ${drawerAnimation} 150ms linear;
   height: 50vh;
   width: 100vw;
@@ -137,7 +137,7 @@ const MobileDrawer = styled.div`
   padding-top: 5rem;
   padding-bottom: 2rem;
   padding-left: 1.5rem;
-  padding-right: 2rem; 
+  padding-right: 2rem;
   backdrop-filter: blur(4px);
   transform: ${({ showmobiledrawer }) =>
     showmobiledrawer ? "translate(0, 0)" : "translate(0, -100%)"};
@@ -179,8 +179,8 @@ const Bars = styled(MdMenu)`
     top: 0;
     right: 0;
     /* position: relative;*/
-  
-   transform: translate(75%, 50%); 
+
+    transform: translate(75%, 50%);
     font-size: 1.8rem;
     display: flex;
     flex-direction: column;
