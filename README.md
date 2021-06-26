@@ -1,20 +1,32 @@
 <p align="center">
   <a href="https://github.com/eightgran/website-gatsby">
-    <img alt="Profile" src="https://avatars.githubusercontent.com/u/79719348?s=48&v=4" width="60" />
+    <img alt="Profile" src="src/assets/images/Icon-256.png" width=120 />
   </a>
 </p>
+
 <h1 align="center">
   eightgran's personal website
 </h1>
 
 This is my personal website built with Gatsby and React.
 
+## Screenshots
+
+<p>Desktop View</p>
+<p align="center">
+    <img alt="Profile" src="src/assets/screenshots/gatsby-website-screenshot-1.jpg" />
+</p>
+<p>Mobile View with Custom Drawer</p>
+    <img alt="Profile" src="src/assets/screenshots/gatsby-website-screenshot-2.jpg"  width=49%/>
+    <img alt="Profile" src="src/assets/screenshots/gatsby-website-screenshot-3.jpg" width=49%/>
+
 ## Dependencies
 
 This website utilizes:
-* [ReactJS](https://github.com/facebook/react/) as Javascript Framework.
-* [Gatsby](https://github.com/gatsbyjs/gatsby) as Static Site Generator.
-* [styled-components](https://github.com/styled-components/styled-components) for low-level styling of React components.
+
+- [ReactJS](https://github.com/facebook/react/) as Javascript Framework.
+- [Gatsby](https://github.com/gatsbyjs/gatsby) as Static Site Generator.
+- [styled-components](https://github.com/styled-components/styled-components) for low-level styling of React components.
 
 and Gatsby
 
@@ -59,10 +71,7 @@ This website is made possible thanks to the [Gatsby Project](https://github.com/
 
 ## License
 
-All the fonts in the `src/assets/fonts` folder are licensed under the **Open Font License**.
-
-All the images in the `src/assets/images` folder are distributed under the **copyright** license. (*© 2015-2021 Michael Grigorenko. All rights reserved.*) 
+All the images in the `src/assets/images` folder are distributed under the **copyright** license. (_© 2015-2021 Michael Grigorenko. All rights reserved._)
 
 Everything else in this repository including the source code is distributed under the
 **BSD 3-Clause** license as specified in the `LICENSE` file.
-
