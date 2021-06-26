@@ -19,6 +19,7 @@ const Privacy = () => {
     <Layout>
       <Seo title="Privacy" />
       <PrivacyContainer>
+        <PrivacyContent>
         <h1> {PrivacyPolicyData.en.title}</h1>
         {PrivacyPolicyData.en.sections.map((item, key) => {
           return (
@@ -28,6 +29,7 @@ const Privacy = () => {
             </div>
           )
         })}
+        </PrivacyContent>
       </PrivacyContainer>
     </Layout>
   )
@@ -45,10 +47,6 @@ const PrivacyContainer = styled.div`
   position: relative;
   min-height: 100vh;
   color: #8f8f8f;
-
-  h1 {
-    margin: 1rem 0rem;
-  }
 
   h2 {
     margin: 1rem 0rem;
@@ -69,7 +67,12 @@ const PrivacyContainer = styled.div`
     margin: 0.5rem 1.5rem;
   }
 
-  @media screen and (max-width: 768px) {
+
+`
+const PrivacyContent = styled.div`
+margin: 4rem 1rem;
+
+@media screen and (max-width: 768px) {
     padding: 2rem 1rem;
   }
 `
