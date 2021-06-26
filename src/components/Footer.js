@@ -15,7 +15,9 @@ const Footer = () => {
           <p>{ProfileData.slogan}</p>
         </BrandDescription>
         <FooterLinks>
-          <SourceLink to="/about">{"<view source>"}</SourceLink>
+          <SourceLink href={ProfileData.repositoryLink} target="_blank">
+            {"<view source>"}
+          </SourceLink>
         </FooterLinks>
       </FooterLinksContainer>
       <FooterLinksContainer>
@@ -24,14 +26,14 @@ const Footer = () => {
 
           {ProfileData.socialMediaProfiles.map((social, key) => {
             return (
-              <FooterLink
+              <FooterExternalLink
                 key={key}
-                to={social.link}
+                href={social.link}
                 target="_blank"
                 icon="true"
               >
                 {<social.icon />}
-              </FooterLink>
+              </FooterExternalLink>
             )
           })}
         </FooterLinks>
@@ -59,6 +61,10 @@ const Container = styled.div`
   grid-template-columns: repeat(2, 1fr);
   color: #5c5963;
   background: #fff;
+
+  @media screen and (max-width: 768px) {
+    padding: 2rem 2rem;
+  }
 `
 const BrandDescription = styled.div`
   display: flex;
@@ -127,7 +133,21 @@ const FooterLink = styled(Link)`
   }
 `
 
-const SourceLink = styled(Link)`
+const FooterExternalLink = styled.a`
+  align-items: center;
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+  font-size: ${({ icon }) => (icon ? "1.5rem" : "0.85rem")};
+  text-align: left;
+  color: #ababab;
+  font-weight: 500;
+  &:hover {
+    transition: 400ms ease-out;
+    color: #5c5963;
+  }
+`
+
+const SourceLink = styled.a`
   text-decoration: none;
   margin-bottom: 0.5rem;
   color: #ababab;

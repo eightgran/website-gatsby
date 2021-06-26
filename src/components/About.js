@@ -104,19 +104,6 @@ const AboutContent = styled.div`
   }
 `
 
-const ProfilePicture = styled.div`
-  background: white;
-
-  margin: 2rem;
-  height: 128px;
-  width: 128px;
-
-  @media screen and (max-width: 768px) {
-    height: 128px;
-    width: 128px;
-  }
-`
-
 const ProfileCharacteristics = styled.div`
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -139,11 +126,6 @@ const ProfileProperty = styled.div`
 const IconContainer = styled.div`
   padding-right: 0.5rem;
   display: flex;
-`
-const SocialMediaIconContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  /* margin-top: 1rem; */
 `
 
 const ProfileDescription = styled.div`

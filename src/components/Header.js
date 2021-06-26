@@ -9,7 +9,7 @@ import { Button } from "./Button"
 import LogoSmall from "./LogoSmall"
 
 const Header = () => {
-  const [location, setLocation] = useState(useLocation())
+  const location = useLocation()
   const [showMobileDrawer, setShowMobileDrawer] = useState(false)
   function getIsActiveRoute(item) {
     const isActive = location.pathname === item.link
@@ -29,9 +29,9 @@ const Header = () => {
         hidden={!showMobileDrawer}
         showmobiledrawer={+showMobileDrawer}
       >
-        {NavigationData.headerLinks.map((item, index) => {
-          if (item.showOnHeader) {
-            return (
+        {NavigationData.headerLinks.map(
+          (item, index) =>
+            item.showOnHeader && (
               <DrawerLink
                 to={item.link}
                 key={index}
@@ -41,14 +41,13 @@ const Header = () => {
                 {item.title}
               </DrawerLink>
             )
-          }
-        })}
+        )}
       </MobileDrawer>
       <Bars onClick={onClickBars} showmobiledrawer={+showMobileDrawer} />
       <NavMenu>
-        {NavigationData.headerLinks.map((item, index) => {
-          if (item.showOnHeader) {
-            return (
+        {NavigationData.headerLinks.map(
+          (item, index) =>
+            item.showOnHeader && (
               <HeaderLink
                 to={item.link}
                 key={index}
@@ -64,12 +63,11 @@ const Header = () => {
                 {item.title}
               </HeaderLink>
             )
-          }
-        })}
+        )}
         <HeaderButton>
           <Button
             round="true"
-            to={NavigationData.headerButtonLink.link}
+            href={NavigationData.headerButtonLink.link}
             target="_blank"
           >
             <ButtonIcon />

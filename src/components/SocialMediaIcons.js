@@ -1,4 +1,3 @@
-import { Link } from "gatsby"
 import React from "react"
 import styled from "styled-components"
 import { ProfileData } from "../data/ProfileData"
@@ -34,7 +33,7 @@ const SocialMediaIconContainer = styled.div`
   /* margin-top: 1rem; */
 `
 
-const SocialMediaIcon = styled(Link)`
+const SocialMediaIcon = styled.a`
   margin-right: ${({ margin }) => (margin ? "0.5rem" : "0")};
   color: #bdbdbd;
   font-size: 1.5rem;

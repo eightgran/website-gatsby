@@ -9,6 +9,7 @@ export const ProfileData = {
   slogan: "is making software",
   logoSvgSmall: Logo,
   emailIcon: MdEmail,
+  repositoryLink: "https://www.github.com/eightgran/website-gatsby",
   characteristics: [
     { label: "Germany", icon: MdPlace },
     { label: "German, English", icon: MdTranslate },

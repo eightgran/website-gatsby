@@ -1,7 +1,6 @@
 import styled from "styled-components"
-import { Link } from "gatsby"
 
-export const Button = styled(Link)`
+export const Button = styled.a`
   background: ${({ black }) => (black ? "#000000" : "#fff")};
   white-space: nowrap;
   padding: ${({ big }) => (big ? "16px 40px" : "10px 32px")};

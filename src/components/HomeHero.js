@@ -11,7 +11,7 @@ const HomeHero = () => {
       animateString(animatedString, setNameLetters, nameLetters)
     }, 750)
     return () => clearInterval(interval)
-  }, [nameLetters.length])
+  })
 
   /**
    * Returns either a static string or an animated string
