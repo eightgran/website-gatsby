@@ -23,8 +23,8 @@ const Privacy = () => {
           <h1> {PrivacyPolicyData.en.title}</h1>
           {PrivacyPolicyData.en.sections.map((item, key) => {
             return (
-              <div>
-                <h2 key={key}>{item.title}</h2>
+              <div key={key}>
+                <h2>{item.title}</h2>
                 {buildParagraphs(item)}
               </div>
             )
@@ -50,9 +50,9 @@ const PrivacyContainer = styled.div`
   z-index: 1;
 `
 const PrivacyContent = styled.div`
-  margin: 4rem 1rem;
+  margin: 4rem 2rem;
   @media screen and (max-width: 768px) {
-    padding: 2rem 1rem;
+    margin: 2rem 2rem;
   }
 
   h2 {

@@ -64,8 +64,9 @@ const Images = styled(Img)`
   height: 192px;
   width: 192px;
   @media screen and (max-width: 768px) {
+    margin: 2rem 2rem;
     height: 256px;
-  width: 256px;
+    width: 256px;
   }
 `
 
